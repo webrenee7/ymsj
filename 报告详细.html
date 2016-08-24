@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>报告详细</title>
+<link rel="stylesheet" type="text/css" href="res/css/css.css" />
+<link rel="stylesheet" type="text/css" href="res/css/swiper.min.css" />
+<script src="res/js/jquery.js"></script>
+<script src="res/js/swiper.jquery.min.js"></script>
+</head>
+<body>
+	<div class="header">
+    	<div class="header_body">
+            <a href="" class="icon1 icon1_01">使用帮助</a>
+            <a href="" class="icon1 icon1_02">退出系统</a>
+        </div>
+    </div>
+    <div class="naver">
+    	<div class="title left">药敏数据监测系统</div>
+        <ul class="nav_list right">
+        	<li>
+            	<a href="" class="cur">医院报告</a>
+            </li>
+            <li>
+            	<a href="">数据筛选</a>
+            </li>
+            <li>
+            	<a href="">学术资讯</a>
+            </li>
+            <li>
+            	<a href="">个人中心<span></span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+    	<div class="top_img"></div>
+        <div class="cont_body">
+        	<div class="tit">中国人民解放军第四军医大学附属西京医院2015年第1季度药敏报告</div>
+            <div class="r_detail">
+            	<span class="u_time">上传时间：201-511-30</span>
+                <span class="s_count">阅读：233</span>
+                <span class="d_count">下载：233</span>
+            </div>
+            <div class="cont_select">
+            	<label>内容分类：</label>
+                <select>
+                	<option>请选择</option>
+                </select>
+            </div>
+            <div class="rank_list">
+            	<div class="swiper-container">
+                	<div class="swiper-wrapper">
+                    	<div class="swiper-slide">
+                        	<img src="res/test_images/ppt1.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                        	<img src="res/test_images/img1.jpg" />
+                        </div>
+                        <div class="swiper-slide">
+                        	<img src="res/test_images/chart1.jpg" />
+                        </div>
+                    </div>
+                </div>
+                <div class="paging">
+                    <input type="button" class="btn prev"/>
+                    <span>1/12</span>
+                    <input type="button" class="btn next"/>
+                </div>
+                <script> 
+					var mySwiper = new Swiper('.swiper-container');
+					$('.prev').on('click', function(e){
+						e.preventDefault()
+						mySwiper.swipePrev()
+					})
+					$('.next').on('click', function(e){
+						e.preventDefault()
+						mySwiper.swipeNext()
+					})
+				</script>
+            </div>
+            <div class="download mb_16">
+            	<span>下载报告：</span>
+                <a href="" class="d_01"></a>
+                <a href="" class="d_02"></a>
+                <a href="" class="d_03"></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+    	<div class="footer_body">备案号 ICP证：沪B2-20150087    技术支持：010-64405225转221</div>
+    </div>
+    <div class="fly_box" id="fly_box_ecnp">
+        <p>APP下载</p>
+        <p><img src="res/images/ewm.jpg" /></p>
+	</div>
+    <script>
+		window.onscroll=function ()
+		{
+			var oDiv=document.getElementById('fly_box_ecnp');
+			var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+			var t=scrollTop+(document.documentElement.clientHeight-oDiv.offsetHeight)/2;
+			startMove(parseInt(t));
+		}
+		
+		var timer=null;
+		
+		function startMove(iTarget)
+		{
+			var oDiv=document.getElementById('fly_box_ecnp');
+			
+			clearInterval(timer);
+			timer=setInterval(function (){
+				var iSpeed=(iTarget-oDiv.offsetTop)/8;
+				iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+				
+				if(oDiv.offsetTop==iTarget)
+				{
+					clearInterval(timer);
+				}
+				else
+				{
+					oDiv.style.top=oDiv.offsetTop+iSpeed+'px';
+				}
+			}, 30);
+		}
+	</script>
+</body>
+</html>

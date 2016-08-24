@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>使用帮助</title>
+<link rel="stylesheet" type="text/css" href="res/css/css.css" />
+ 
+</head>
+<body>
+	<div class="header">
+    	<div class="header_body">
+            <a href="" class="icon1 icon1_01">使用帮助</a>
+            <a href="" class="icon1 icon1_02">退出系统</a>
+        </div>
+    </div>
+    <div class="naver">
+    	<div class="title left">药敏数据监测系统</div>
+        <ul class="nav_list right">
+        	<li>
+            	<a href="">医院报告</a>
+            </li>
+            <li>
+            	<a href="">数据筛选</a>
+            </li>
+            <li>
+            	<a href="">学术资讯</a>
+            </li>
+            <li>
+            	<a href="" class="cur">个人中心<span></span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+    	<div class="top_img"></div>
+        <div class="cont_body">
+        	<div class="per_center clearfix">
+                <div class="l_sidebar">
+                	<a href="" class="cur">医院报告</a>
+                    <a href="">数据筛选</a>
+                    <a href="">学术资讯</a>
+                    <a href="">个人中心</a>
+                </div>
+                <div class="r_box">
+                	<div class="headline">
+            			<p class="icon2 icon2_01">医院报告</p>
+            		</div>
+                    <div class="help_box">
+                        <p><span>●</span>如何查看医院报告？</p>
+                        <p>您只需在“医院报告”页面里的“报告标题”里填写您所需要查找的报告标题，然后在“报告时间”里填写起止日期，点击“查询”按钮，就可以得到您所需要的相应报告。</p>
+                        <p><span>●</span>如何查看医院报告详细内容？</p>
+                        <p>您只需在“医院报告”页面 “报告列表”里选择你所需要的相关报告，点击进去就可以查看您所需要报告的详细信息。</p>
+                        <p><span>●</span>如何导出所查看的医院报告？</p>
+                        <p>您只需在“医院报告”页面里找到您所需要的报告，选择“报告列表”里右侧所需要导出的格式即可。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+    	<div class="footer_body">备案号 ICP证：沪B2-20150087    技术支持：010-64405225转221</div>
+    </div>
+    <div class="fly_box" id="fly_box_ecnp">
+        <p>APP下载</p>
+        <p><img src="res/images/ewm.jpg" /></p>
+	</div>
+    <script>
+		window.onscroll=function ()
+		{
+			var oDiv=document.getElementById('fly_box_ecnp');
+			var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+			var t=scrollTop+(document.documentElement.clientHeight-oDiv.offsetHeight)/2;
+			startMove(parseInt(t));
+		}
+		
+		var timer=null;
+		
+		function startMove(iTarget)
+		{
+			var oDiv=document.getElementById('fly_box_ecnp');
+			
+			clearInterval(timer);
+			timer=setInterval(function (){
+				var iSpeed=(iTarget-oDiv.offsetTop)/8;
+				iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+				
+				if(oDiv.offsetTop==iTarget)
+				{
+					clearInterval(timer);
+				}
+				else
+				{
+					oDiv.style.top=oDiv.offsetTop+iSpeed+'px';
+				}
+			}, 30);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>数据筛选</title>
+<link rel="stylesheet" type="text/css" href="res/css/css.css" />
+ 
+</head>
+<body>
+	<div class="header">
+    	<div class="header_body">
+            <a href="" class="icon1 icon1_01">使用帮助</a>
+            <a href="" class="icon1 icon1_02">退出系统</a>
+        </div>
+    </div>
+    <div class="naver">
+    	<div class="title left">药敏数据监测系统</div>
+        <ul class="nav_list right">
+        	<li>
+            	<a href="">医院报告</a>
+            </li>
+            <li>
+            	<a href="" class="cur">数据筛选</a>
+            </li>
+            <li>
+            	<a href="">学术资讯</a>
+            </li>
+            <li>
+            	<a href="">个人中心<span></span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+    	<div class="top_img"></div>
+        <div class="cont_body">
+            <div class="headline mt_20">
+            	<p class="icon2 icon2_02">选择数据</p>
+                <input type="button" class="btn" value="全国数据筛选" />
+            </div>
+            <div class="select_data clearfix">
+            	<div class="l_select">
+                	<div class="select_line">
+                        <label>选择菌种：</label>
+                        <select disabled="disabled">
+                            <option>大肠埃希菌</option>
+                        </select>
+                        <label>选择标本：</label>
+                        <select>
+                            <option>全部标本</option>
+                        </select>
+                        <label>选择抗生素：</label>
+                        <select>
+                            <option>全部抗生素</option>
+                        </select>
+                	</div>
+                	<div class="select_line">
+                        <label>选择科室：</label>
+                        <select>
+                            <option>全部科室</option>
+                        </select>
+                        <label>选择时间：</label>
+                        <select class="short_select">
+                            <option>全部</option>
+                        </select>
+                        <span>--</span>
+                        <select class="short_select">
+                            <option>全部</option>
+                        </select>
+                        <label>报表类型：</label>
+                        <select>
+                            <option>菌种检出率趋势图</option>
+                        </select>
+                    </div>
+                    <div class="select_line" style="display:block;">
+                        <label>大区：</label>
+                        <select class="se_01">
+                            <option>北京</option>
+                        </select>
+                        <label>地区：</label>
+                        <select class="se_01">
+                            <option>选择</option>
+                        </select>
+                        <label>医院：</label>
+                        <select class="se_02">
+                            <option>北京协和医院</option>
+                        </select>
+                    </div>
+                    <div class="select_line" style="display:block;">
+                        <label>药物：</label>
+                        <input type="text" class="txt" />
+                    </div>
+                </div>
+                <div class="r_btn">
+                	<input type="button" class="btn btn1" value="查询" />
+                </div>
+            </div>
+            <div class="headline">
+            	<p class="icon2 icon2_02">筛选结果</p>
+            </div>
+            <div class="select_result">
+                <div class="list_menu">
+                    <div class="left">
+                        报表类型：<a href="" class="menu menu1 ml_0">饼状</a>
+                        <a href="" class="menu menu2">柱状</a>
+                        <a href="" class="menu_on menu3">折线</a>
+                    </div>
+                    <div class="right">
+                    	<a href="" class="menu menu4">导出EXECL</a>
+                        <a href="" class="menu menu5">导出图片</a>
+                    </div>
+                </div>
+                <div class="chart_box">
+                	<img src="res/images/chart.jpg" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+    	<div class="footer_body">备案号 ICP证：沪B2-20150087    技术支持：010-64405225转221</div>
+    </div>
+    <div class="fly_box" id="fly_box_ecnp">
+        <p>APP下载</p>
+        <p><img src="res/images/ewm.jpg" /></p>
+	</div>
+    <script>
+		window.onscroll=function ()
+		{
+			var oDiv=document.getElementById('fly_box_ecnp');
+			var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+			var t=scrollTop+(document.documentElement.clientHeight-oDiv.offsetHeight)/2;
+			startMove(parseInt(t));
+		}
+		
+		var timer=null;
+		
+		function startMove(iTarget)
+		{
+			var oDiv=document.getElementById('fly_box_ecnp');
+			
+			clearInterval(timer);
+			timer=setInterval(function (){
+				var iSpeed=(iTarget-oDiv.offsetTop)/8;
+				iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+				
+				if(oDiv.offsetTop==iTarget)
+				{
+					clearInterval(timer);
+				}
+				else
+				{
+					oDiv.style.top=oDiv.offsetTop+iSpeed+'px';
+				}
+			}, 30);
+		}
+	</script>
+    <div class="sel_drug">
+    	<div class="sel_tit">
+        	<p>请选择药物</p>
+            <a href="">x</a>
+        </div>
+        <div class="sel_cont">
+        	<div class="sel_all">
+            	<input type="checkbox" />全选
+            </div>
+            <div class="sel_list">
+            	<ul class="clearfix">
+                	<li>
+                    	<input type="checkbox" />头孢替坦
+                    </li>
+                    <li>
+                    	<input type="checkbox" />头孢替坦头孢替坦头孢替坦头孢替坦头孢替坦头孢替坦头孢替坦
+                    </li>
+                    <li>
+                    	<input type="checkbox" />头孢替坦
+                    </li>
+                    <li>
+                    	<input type="checkbox" />头孢替坦
+                    </li>
+                    <li>
+                    	<input type="checkbox" />头孢替坦
+                    </li>
+                    <li>
+                    	<input type="checkbox" />头孢替坦
+                    </li>
+                    <li>
+                    	<input type="checkbox" />头孢替坦
+                    </li>
+                </ul>
+            </div>
+            <div class="ensure_btn">
+            	<input type="button" class="btn" value="确定" />
+            </div>
+        </div>
+    </div>
+</body>
+</html>

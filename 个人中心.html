@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>个人中心</title>
+<link rel="stylesheet" type="text/css" href="res/css/css.css" />
+<script src="res/js/index.js"></script>
+ 
+</head>
+<body onload="init()" onresize="init()">
+	<div class="header">
+    	<div class="header_body">
+            <a href="" class="icon1 icon1_01">使用帮助</a>
+            <a href="" class="icon1 icon1_02">退出系统</a>
+        </div>
+    </div>
+    <div class="naver">
+    	<div class="title left">药敏数据监测系统</div>
+        <ul class="nav_list right">
+        	<li>
+            	<a href="">医院报告</a>
+            </li>
+            <li>
+            	<a href="">数据筛选</a>
+            </li>
+            <li>
+            	<a href="">学术资讯</a>
+            </li>
+            <li>
+            	<a href="" class="cur">个人中心<span></span></a>
+            </li>
+        </ul>
+    </div>
+    <div class="main" id="bg">
+    	<div class="top_img"></div>
+        <div class="cont_body">
+        	<div class="per_center clearfix">
+                <div class="l_sidebar">
+                	<a href="" class="icon3 icon3_01 cur">个人资料</a>
+                    <a href="" class="icon3 icon3_02">用户审批</a>
+                </div>
+                <div class="r_box">
+                	<div class="headline">
+            			<p class="icon2 icon2_05">个人资料</p>
+            		</div>
+                    <div class="per_data">
+                    	<div class="base_info">
+                        	<div class="info_tit">基本信息</div>
+                            <div class="info_box">
+                            	<table>
+                                	<tr>
+                                    	<td width="177">
+                                        	<label>姓名：</label>
+                                        	<input type="text" class="txt txt_04" />
+                                        </td>
+                                        <td width="276">
+                                        	<label>医院：</label>
+                                        	<input type="text" class="txt txt_05" />
+                                        </td>
+                                        <td width="217">
+                                        	<label>科室：</label>
+                                        	<input type="text" class="txt txt_06" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    	<td>
+                                        	<label>职称：</label>
+                                        	<input type="text" class="txt txt_04" />
+                                        </td>
+                                        <td>
+                                        	<label>手机：</label>
+                                        	<input type="text" class="txt txt_05" />
+                                            <a href="">修改</a>
+                                        </td>
+                                        <td>
+                                        	<label>邮箱：</label>
+                                        	<input type="text" class="txt txt_06" />
+                                            <a href="">修改</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="pwd_modify">
+                        	<div class="info_tit">密码修改</div>
+                            <div class="modify_box">
+                            	<table>
+                                	<tr>
+                                    	<td>
+                                        	<label>旧密码：</label>
+                                        	<input type="text" class="txt txt_05" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    	<td>
+                                        	<label>新密码：</label>
+                                        	<input type="text" class="txt txt_05" />
+                                            <span>（必须为数字与字母的组合）</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    	<td>
+                                        	<label>确认新密码：</label>
+                                        	<input type="text" class="txt txt_05" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    	<td>
+                                        	<p class="save_btn"><input type="button" class="btn btn1" value="保存" /></p>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+    	<div class="footer_body">备案号 ICP证：沪B2-20150087    技术支持：010-64405225转221</div>
+    </div>
+    <div class="fly_box" id="fly_box_ecnp">
+        <p>APP下载</p>
+        <p><img src="res/images/ewm.jpg" /></p>
+	</div>
+    <script>
+		window.onscroll=function ()
+		{
+			var oDiv=document.getElementById('fly_box_ecnp');
+			var scrollTop=document.documentElement.scrollTop||document.body.scrollTop;
+			var t=scrollTop+(document.documentElement.clientHeight-oDiv.offsetHeight)/2;
+			startMove(parseInt(t));
+		}
+		
+		var timer=null;
+		
+		function startMove(iTarget)
+		{
+			var oDiv=document.getElementById('fly_box_ecnp');
+			
+			clearInterval(timer);
+			timer=setInterval(function (){
+				var iSpeed=(iTarget-oDiv.offsetTop)/8;
+				iSpeed=iSpeed>0?Math.ceil(iSpeed):Math.floor(iSpeed);
+				
+				if(oDiv.offsetTop==iTarget)
+				{
+					clearInterval(timer);
+				}
+				else
+				{
+					oDiv.style.top=oDiv.offsetTop+iSpeed+'px';
+				}
+			}, 30);
+		}
+	</script>
+</body>
+</html>
